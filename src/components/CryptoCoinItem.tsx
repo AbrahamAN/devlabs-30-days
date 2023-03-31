@@ -38,7 +38,28 @@ export const CryptoCoinItem = () => {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '40%',
   });
+
+  const ContainerLeft = styled.View({
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  });
+  const ContainerRight = styled.View({
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  });
+
+  const TitleBold = styled.Text({
+    fontWeight: 'bold',
+    color: 'black',
+  });
+
+  const TextPercentage = styled.Text(props => ({
+    color: props.value >= 0 ? 'green' : 'red',
+  }));
 
   return (
     <ScrollView>
@@ -46,15 +67,30 @@ export const CryptoCoinItem = () => {
       {!isLoading &&
         crypto.map((coin: CryptoCoin) => (
           <Container key={coin.id}>
-            <Avatar
-              size={50}
-              uri={`https://messari.io/asset-images/${coin.id}/128.png`}
-            />
-            <ContainerSymbol>
-              <Text>{coin.name}</Text>
-              <Text>{coin.symbol}</Text>
-            </ContainerSymbol>
-            <Text>${coin.metrics.market_data.price_usd.toFixed(2)}</Text>
+            <ContainerLeft>
+              <Avatar
+                size={50}
+                uri={`https://messari.io/asset-images/${coin.id}/128.png`}
+              />
+              <ContainerSymbol>
+                <TitleBold>{coin.name}</TitleBold>
+                <Text>{coin.symbol}</Text>
+              </ContainerSymbol>
+            </ContainerLeft>
+            <ContainerRight>
+              <TitleBold>
+                ${coin.metrics.market_data.price_usd.toFixed(2)}
+              </TitleBold>
+              <TextPercentage
+                value={
+                  coin.metrics.market_data.percent_change_usd_last_24_hours
+                }>
+                {coin.metrics.market_data.percent_change_usd_last_24_hours.toFixed(
+                  2
+                )}
+                %
+              </TextPercentage>
+            </ContainerRight>
           </Container>
         ))}
     </ScrollView>
