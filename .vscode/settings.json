@@ -1,0 +1,8 @@
+{
+    "prettier.configPath": ".prettierrc.js",
+    "vs-code-prettier-eslint.prettierLast": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.formatOnPaste": true,
+    "java.compile.nullAnalysis.mode": "automatic"
+}
