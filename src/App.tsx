@@ -6,21 +6,18 @@ import {AddCryptoScreen} from './screens/AddCryptoScreen';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={MyCryptosScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="AddCrypto" component={AddCryptoScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
+const App = () => (
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen
+        name="Home"
+        component={MyCryptosScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen name="AddCrypto" component={AddCryptoScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
 export default App;

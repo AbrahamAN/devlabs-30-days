@@ -1,20 +1,6 @@
 import React from 'react';
-import Avatar from './Avatar';
-import styled from 'styled-components/native';
-
-const Container = styled.View`
-  flex-direction: row;
-  background-color: #05356bd6;
-  justify-content: space-between;
-  align-items: center;
-  padding: 35px;
-`;
-
-const Title = styled.Text`
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-`;
+import Avatar from '../Avatar';
+import {Container, Title} from './styles';
 
 const Header = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Dimensions} from 'react-native';
-import Header from '../components/Header';
-import {CryptoCoinItem} from '../components/CryptoCoinItem';
-import FloatingButton from '../components/AddButton';
+import Header from '../components/Header/index';
+import {CryptoCoinItem} from '../components/CryptoCoinItem/index';
+import AddButton from '../components/AddButton/index';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../navigation';
 
@@ -23,10 +23,7 @@ const MyCryptosScreen = ({navigation}: MyCryptosScreenProps) => {
       }}>
       <Header />
       <CryptoCoinItem />
-      <FloatingButton
-        onPress={() => navigation.navigate('AddCrypto')}
-        title="+"
-      />
+      <AddButton onPress={() => navigation.navigate('AddCrypto')} title="+" />
     </View>
   );
 };
